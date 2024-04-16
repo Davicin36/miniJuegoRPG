@@ -31,7 +31,7 @@ public class Entidades implements IAtacable{
         
         barraVida.setValue(vida);
         //le damos un color a la barra.
-        barraVida.setForeground(Color.RED);
+        barraVida.setForeground(Color.GREEN);
         barraVida.setStringPainted(true);
         //le damos un formato a la barra de vida para que aparezca lo que nosotroa queremos.
         barraVida.setString(vidaActual + "   /   " + Double.valueOf(vidaMax).intValue());
@@ -50,7 +50,7 @@ public class Entidades implements IAtacable{
     @Override
     public void recibirHerida(int cantidad) {
 
-        if(estaVivo){ 
+        if(estaVivo){
             //comprobamos la cantidad de vida que le quitamos.
             int cantidadTotal = cantidad - defensa;
             //cuando esa cantidad es igual o inferior a 0 entonces la cantidad de daño total sera 1, por defecto.
@@ -59,8 +59,8 @@ public class Entidades implements IAtacable{
             vidaActual -= cantidadTotal;
             //comprobamos si la vida actual es igual o menor a 0 entonces estara muerto.
             if (vidaActual <= 0) estaVivo = false;
-        }
-        
+
+        } 
     }
 
     public String getNombre() {
