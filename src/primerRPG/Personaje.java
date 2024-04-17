@@ -4,14 +4,12 @@ public class Personaje extends Entidades{
 
     private int nivel, oro, exp, expNecesaria;
 
-    public Personaje(String nombre, int ataque, int defensa, Double vidaMax, int nivel, int oro, int exp,
-            int expNecesaria) {
+    public Personaje(String nombre, int ataque, int defensa, Double vidaMax) {
         super(nombre, ataque, defensa, vidaMax);
         nivel = 1;
         oro = 0;
         exp = 0;
         expNecesaria = 10;
-
     }
 
     public int getNivel (){
@@ -24,6 +22,9 @@ public class Personaje extends Entidades{
         setDefensa(getDefensa() + 1);
         setVidaMax(getVidaMax() * 1.1 );
         getBarraVida().setMaximum(getVidaMax().intValue());
+        setVidaActual(getVidaMax().intValue());
+        establecerVida(getVidaMax().intValue());
+        expNecesaria += (expNecesaria + 5);
     }
 
     public int getExp (){
@@ -47,8 +48,5 @@ public class Personaje extends Entidades{
     public int getOro(){
         return oro;
     }
-
-
-
     
 }
