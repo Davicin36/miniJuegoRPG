@@ -39,6 +39,10 @@ public class ventanaPrincipal {
 
     }
 
+    public JPanel getPanelSuperior (){
+        return panelSuperior;
+    }
+
     public void comenzarJuego () {
 
         montarEscena();
@@ -47,6 +51,7 @@ public class ventanaPrincipal {
 
     private void montarEscena() {
         
+        modificarFuentes();
         //elaboramos panel superior.
         panelSuperior.add(etNombre);
         panelSuperior.add(etNivel);
@@ -60,7 +65,7 @@ public class ventanaPrincipal {
         panelPrincipal.add(etImagen, BorderLayout.CENTER);
 
         //añadimos panel inferior, botones  
-        //btnExplorar.addActionListener(e-> nuevaExploracion());
+        btnExplorar.addActionListener(e-> nuevaExploracion());
         panelInferior.add(btnExplorar);
 
         //añadimos paneles secundarios a panel principal
@@ -71,8 +76,19 @@ public class ventanaPrincipal {
         marco.add(panelPrincipal);
     }
 
-    //private Object nuevaExploracion() {}
+    private Object nuevaExploracion() {
+        return null;
+    }
 
+    public void modificarFuentes () {
 
+        Font miFuente = new Font("Verdana", Font.BOLD, 20);
+        etNombre.setFont(miFuente);
+            
+    }
+
+    public Personaje getPj (){
+        return pj;
+    }
 
 }

@@ -22,7 +22,7 @@ public class Entidades implements IAtacable{
         vidaActual = Double.valueOf(vidaMax).intValue();
         estaVivo = true;
         barraVida = new JProgressBar(0, Double.valueOf(vidaMax).intValue());
-        barraVida.setPreferredSize(new Dimension (100, 25));
+        barraVida.setPreferredSize(new Dimension (150, 25));
         establecerVida (vidaActual);
 
     }
